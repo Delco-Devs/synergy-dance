@@ -3,5 +3,8 @@
 	"email": "julie@synergydancellc.com",
 	"phoneForTel": "610-636-6810",
 	"phoneFormatted": "(610) 636-6810",
-	"domain": "www.synergydancellc.com"
+	"domain": "www.synergydancellc.com",
+	"address": {
+		"region": "Greater Philadelphia"
+	}
 }
