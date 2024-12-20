@@ -4,12 +4,16 @@
     "url": "/"
   },
   {
-    "key": "About Us",
+    "key": "About",
     "url": "/about/"
   },
   {
-    "key": "Projects",
-    "url": "/projects/"
+    "key": "Services",
+    "url": "/services/"
+  },
+  {
+    "key": "Gallery",
+    "url": "/gallery/"
   },
   {
     "key": "Reviews",
