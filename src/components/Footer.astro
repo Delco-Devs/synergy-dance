@@ -1,8 +1,39 @@
 ---
 import client from "../data/client.json";
+
+const links = [
+  {
+    title: "Home",
+    path: "/",
+  },
+  {
+    title: "About",
+    path: "/about",
+  },
+  {
+    title: "Services",
+    path: "/services",
+  },
+  {
+    title: "Gallery",
+    path: "/gallery",
+  },
+  {
+    title: "Reviews",
+    path: "/reviews",
+  },
+  {
+    title: "Contact Us",
+    path: "/contact",
+  },
+];
+
+const services = ["Choreography", "Master Classes", "Lift Workshops", "Consultations", "Audition Prep"];
 ---
 
-<!-- ============================================ --><!--                   Footer                     --><!-- ============================================ -->
+<!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
 <footer id="footer">
   <div class="container">
     <div class="left-section">
@@ -27,34 +58,17 @@ import client from "../data/client.json";
           <li>
             <h2>Information</h2>
           </li>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/about">About Us</a>
-          </li>
-          <li>
-            <a href="/services">Services</a>
-          </li>
-          <li>
-            <a href="/gallery">Gallery</a>
-          </li>
-          <li>
-            <a href="/reviews">Reviews</a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
-          </li>
+          {links.map(link => (
+            <li>
+              <a href={link.path}>{link.title}</a>
+            </li>
+          ))}
         </ul>
         <ul>
           <li>
             <h2>Services</h2>
           </li>
-          <li>Choreography</li>
-          <li>Master Classes</li>
-          <li>Lift Workshops</li>
-          <li>Consultations</li>
-          <li>Audition Prep</li>
+          {services.map(service => <li>{service}</li>)}
         </ul>
         <ul>
           <li>
@@ -85,8 +99,8 @@ import client from "../data/client.json";
 
   <div class="credit">
     <span>Designed and Hand Coded by</span>
-    <a href="/" target="_blank" rel="noopener">Your Company Name</a>
-    <span class="copyright"> Copyright 2023 - Present</span>
+    <a href="https://nickkorintus.com" target="_blank" rel="noopener">Nick Korintus</a>
+    <span class="copyright"> Copyright 2025 - Present</span>
   </div>
 </footer>
 
@@ -226,6 +240,7 @@ import client from "../data/client.json";
         font-size: (16/16rem);
         text-decoration: none;
         color: var(--primary);
+        // font-weight: bold;
 
         &:hover {
           text-decoration: underline;
