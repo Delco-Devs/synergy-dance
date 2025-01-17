@@ -4,109 +4,261 @@ import CTA from "../components/CTA.astro";
 import Landing from "../components/Landing.astro";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import {getOptimizedImage} from "../js/utils"
-import landingImage from "../assets/images/dancers-squat.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
-const optimizedImage = await getOptimizedImage(landingImage)
+import { getOptimizedImage } from "../js/utils";
+import landingImage from "../assets/images/dancers-squat.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage);
 ---
 
 <BaseLayout
   title="About"
   description="Meta description for the page"
-  preloadedImage = {optimizedImage}
+  preloadedImage={optimizedImage}
 >
   <!-- ============================================ -->
   <!--                    LANDING                   -->
   <!-- ============================================ -->
 
-  <Landing 
-    title="About Us"
-    image={optimizedImage}
-  />
+  <Landing title="About Us" image={optimizedImage} />
 
   <!-- ============================================ -->
-  <!--                 Side By Side                 -->
+  <!--                Side By Side                  -->
   <!-- ============================================ -->
 
-  <section id="sbs">
+  <section id="sbs-2171">
     <div class="cs-container">
-      <!-- Left Image Section -->
-      <div class="cs-left">
-        <picture class="cs-picture cs-picture1">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/cabinets2-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/cabinets2.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/cabinets2.jpg"
-            alt="cabinets"
-            loading="lazy"
-            width="400"
-            height="563"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture2">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/construction-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/construction.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/construction.jpg"
-            alt="house"
-            loading="lazy"
-            width="400"
-            height="563"
-          />
-        </picture>
-      </div>
-      <!-- Right Content Section-->
-      <div class="cs-right">
-        <span class="cs-topper">About Us</span>
-        <h2 class="cs-title">About Company Title</h2>
+      <picture class="cs-picture">
+        <!--Mobile Image-->
+        <source
+          media="(max-width: 600px)"
+          srcset="/assets/images/headshots/julie.jpg"
+        />
+        <!--Tablet and above Image-->
+        <source
+          media="(min-width: 601px)"
+          srcset="/assets/images/headshots/julie.jpg"
+        />
+        <img
+          loading="lazy"
+          decoding="async"
+          src="/assets/images/headshots/julie.jpg"
+          alt="room"
+          width="960"
+          height="796"
+        />
+      </picture>
+      <div class="cs-content">
+        <span class="cs-topper">Our Founder</span>
+        <h2 class="cs-title">About Julie Berardi</h2>
         <p class="cs-text">
-          In consequat tincidunt turpis sit amet imperdiet. Praesent Class
-          officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur
-          et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent
-          nonatourean olei aptent taciti sociosqu ad litora torquent per.
+          Julie holds a B.A. in Advertising/Public Relations with a minor in
+          Business from Penn State University and spent four years performing
+          with the nationally ranked Penn State Lionettes Dance Team. With over
+          30 years of dance experience, Julie collaborates with studios and
+          dance teams across the country to create dynamic and original
+          choreography that inspires dancers to excel.
         </p>
         <p class="cs-text">
-          In consequat tincidunt turpis sit amet imperdiet. Praesent Class
-          officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur
-          et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent
-          nonatourean olei aptent taciti sociosqu ad litora torquent per.
+          Her dance training began with a strong technical foundation in ballet
+          at the Oxford Center for Dance (PA), under Dina Gazzero, and the
+          Mid-Atlantic Ballet Company (DE), under Sara Taylor Neal. Julie is
+          also trained in a wide range of dance styles, including jazz,
+          contemporary, lyrical, modern, tap, pom, kick, and hip-hop.
         </p>
-        <div class="cs-flex-group">
-          <p class="cs-flex-p">
-            In consequat tincidunt turpis sit amet imperdiet. Praesent Classei
-            consequat tincidunt turpis sit amet imperdiet for mind.
-          </p>
-          <span class="cs-name">Justin Time</span>
-          <span class="cs-job">CEO-Founder</span>
-          <img
-            class="cs-quote-icon"
-            loading="lazy"
-            decoding="async"
-            src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
-            alt="gavel"
-            width="136"
-            height="77"
-          />
-        </div>
-        <a href="/projects" class="cs-button-solid">Our Projects</a>
+        <p class="cs-text">
+          In 2001, Julie toured Europe with the Blue Lake International Ballet
+          Ensemble, performing in an original piece by Jefferson Baum and was
+          selected to dance the pas de deux from Don Quixote. She has performed
+          lead roles in numerous ballet classics, including the Lilac Fairy from
+          Sleeping Beauty, the Black Swan from Swan Lake, the Snow Queen, Dew
+          Drop Fairy, and Clara from The Nutcracker, as well as the Grande Rose
+          from Alice in Wonderland.
+        </p>
+        <p class="cs-text">
+          Throughout her career, Julie has worked with nearly 100 dance teams
+          and studios, helping them achieve numerous titles, top-5 finishes, and
+          choreography awards. From 2015 to 2021, she coached and choreographed
+          for the 3x National Champion Penn State Lionettes Dance Team, and she
+          now leads the spirit squads at Eastern University. Julie’s passion
+          lies in helping dancers unlock their full potential and experience the
+          joy of success both on and off the stage.
+        </p>
+        <!-- <a href="" class="cs-button-solid">Contact Us</a> 
+            -->
       </div>
     </div>
+    <!-- <img class="cs-floater" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/flower5.png" alt="flower" width="295" height="225" aria-hidden="true"> -->
   </section>
+
+  <!-- ============================================ -->
+  <!--                Meet The Team                 -->
+  <!-- ============================================ -->
+
+  <section id="meet-us-1021">
+    <div class="cs-container">
+      <div class="cs-content">
+        <!-- <img class="cs-graphic" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/Ornament.svg" alt="chef" width="456" height="31"> -->
+        <h2 class="cs-title">Meet Our Team</h2>
+        <p class="cs-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco.
+        </p>
+      </div>
+      <ul class="cs-card-group">
+        <li class="cs-item">
+          <picture class="cs-picture">
+            <source
+              media="(max-width: 767px)"
+              srcset="/assets/images/headshots/brielle.jpg"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="/assets/images/headshots/brielle.jpg"
+            />
+            <img
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/headshots/brielle.jpg"
+              alt="chef"
+              width="305"
+              height="335"
+            />
+          </picture>
+          <div class="cs-info">
+            <span class="cs-name">Brielle Thomspon</span>
+            <span class="cs-job">Choreographer</span>
+          </div>
+        </li>
+        <li class="cs-item">
+          <picture class="cs-picture">
+            <source
+              media="(max-width: 767px)"
+              srcset="/assets/images/headshots/riley.jpg"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="/assets/images/headshots/riley.jpg"
+            />
+            <img
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/headshots/riley.jpg"
+              alt="chef"
+              width="305"
+              height="335"
+            />
+          </picture>
+          <div class="cs-info">
+            <span class="cs-name">Riley Maghery</span>
+            <span class="cs-job">Choreographer</span>
+          </div>
+        </li>
+        <li class="cs-item">
+          <picture class="cs-picture">
+            <source
+              media="(max-width: 767px)"
+              srcset="/assets/images/headshots/jessica.jpg"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="/assets/images/headshots/jessica.jpg"
+            />
+            <img
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/headshots/jessica.jpg"
+              alt="chef"
+              width="305"
+              height="335"
+            />
+          </picture>
+          <div class="cs-info">
+            <span class="cs-name">Jessica Metz</span>
+            <span class="cs-job">Choreographer</span>
+          </div>
+        </li>
+        <li class="cs-item">
+          <picture class="cs-picture">
+            <source
+              media="(max-width: 767px)"
+              srcset="/assets/images/headshots/lauren.jpg"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="/assets/images/headshots/lauren.jpg"
+            />
+            <img
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/headshots/lauren.jpg"
+              alt="chef"
+              width="305"
+              height="335"
+            />
+          </picture>
+          <div class="cs-info">
+            <span class="cs-name">Lauren DiPietro</span>
+            <span class="cs-job">Choreographer</span>
+          </div>
+        </li>
+        <li class="cs-item">
+          <picture class="cs-picture">
+            <source
+              media="(max-width: 767px)"
+              srcset="/assets/images/headshots/emma.jpg"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="/assets/images/headshots/emma.jpg"
+            />
+            <img
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/headshots/emma.jpg"
+              alt="chef"
+              width="305"
+              height="335"
+            />
+          </picture>
+          <div class="cs-info">
+            <span class="cs-name">Emma Vadney</span>
+            <span class="cs-job">Choreographer</span>
+          </div>
+        </li>
+        <li class="cs-item">
+          <picture class="cs-picture">
+            <source
+              media="(max-width: 767px)"
+              srcset="/assets/images/headshots/aryanna.jpg"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="/assets/images/headshots/aryanna.jpg"
+            />
+            <img
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/headshots/aryanna.jpg"
+              alt="chef"
+              width="305"
+              height="335"
+            />
+          </picture>
+          <div class="cs-info">
+            <span class="cs-name">Aryanna Allen</span>
+            <span class="cs-job">Logistics Coordinator</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <CTA />
 </BaseLayout>
 
@@ -118,9 +270,11 @@ const optimizedImage = await getOptimizedImage(landingImage)
 <--- -------------------------- -*/
 
   /* Mobile - 360px */
-  @media only screen and (min-width: 0em) {
-    #sbs {
-      padding: var(--sectionPadding);
+  @media only screen and (min-width: 0rem) {
+    #sbs-2171 {
+      background-color: #fbf5f1;
+      position: relative;
+      z-index: 1;
 
       .cs-container {
         width: 100%;
@@ -128,191 +282,357 @@ const optimizedImage = await getOptimizedImage(landingImage)
         margin: auto;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        row-gap: (40/16rem);
       }
 
-      .cs-left {
-        /* scaling the font size with the view width */
-        font-size: ~"min(2.31vw, .7em)";
-        /* using ems so we can use font size to scale the whole section */
-        width: (631/16em);
-        height: (636/16em);
-        position: relative;
-      }
-
-      .cs-picture {
-        border-radius: (24/16em);
-        display: block;
-        position: absolute;
-        /* clips img tag corners */
-        overflow: hidden;
-        img {
-          width: 100%;
-          height: 100%;
-          /* makes image act like a background image */
-          object-fit: cover;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-      }
-
-      .cs-picture1 {
-        width: (522/16em);
-        height: (581/16em);
-        top: 0;
-        left: 0;
-      }
-
-      .cs-picture2 {
-        width: (414/16em);
-        height: (400/16em);
-        background-color: #fff;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
-        /* 6px - 12px */
-        border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
-        right: 0;
-        bottom: 0;
-      }
-
-      .cs-right {
-        max-width: (542/16rem);
-        margin: auto;
-      }
-
-      .cs-topper {
+      .cs-content {
+        /* set text align to left if content needs to be left aligned */
         text-align: left;
-        margin-bottom: (4/16rem);
+        width: 100%;
+        max-width: (522/16rem);
+        /* moved section padding to cs-content so the cs-background can be full width */
+        padding: var(--sectionPadding);
+        /* prevents padding and border from affecting height and width */
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: flex-start;
       }
 
       .cs-title {
-        text-align: left;
-        max-width: (800/16rem);
+        margin: 0 0 1rem 0;
       }
 
       .cs-text {
-        text-align: left;
-        max-width: (750/16rem);
         margin-bottom: (16/16rem);
-        color: var(--bodyTextColor);
-
         &:last-of-type {
           margin-bottom: (32/16rem);
         }
       }
 
-      .cs-flex-group {
-        /* 16px - 32px */
-        padding: clamp(1rem, 3vw, 2rem);
-        background-color: #f7f7f7;
-        border-radius: (16/16rem);
-        position: relative;
+      .cs-ul {
+        margin: 0 0 (32/16rem);
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: (32/16rem);
       }
 
-      .cs-flex-p {
-        /* 14px - 16px */
-        font-size: clamp(0.875rem, 1.5vw, 1rem);
+      .cs-li {
+        list-style: none;
+      }
+
+      .cs-h3 {
+        font-size: (20/16rem);
+        font-weight: 700;
+        line-height: 1.2em;
+        margin: 0 0 (8/16rem) 0;
+        color: var(--headerColor);
+      }
+
+      .cs-li-text {
+        font-size: (16/16rem);
         line-height: 1.5em;
         margin: 0 0 (16/16rem);
-        color: #353535;
+        color: var(--bodyTextColor);
       }
 
-      .cs-name {
+      .cs-info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: (40/16rem);
+      }
+
+      .cs-flex {
         font-size: (16/16rem);
-        font-weight: bold;
-        line-height: 1.2em;
-        text-transform: uppercase;
-        margin: 0 0 (4/16rem);
-        color: var(--headerColor);
-        display: block;
-      }
-
-      .cs-job {
-        font-size: (14/16rem);
         line-height: 1.5em;
-        color: #353535;
-        display: block;
+        margin: 0;
+        color: var(--bodyTextColor);
+        display: flex;
+        align-items: center;
+        gap: (8/16rem);
       }
 
-      .cs-quote-icon {
-        /* 60px - 136px */
-        width: clamp(3.75rem, 10vw, 8.5rem);
+      .cs-icon {
+        width: (20/16rem);
         height: auto;
-        position: absolute;
-        /* 16px - 32px */
-        right: clamp(1rem, 4vw, 2rem);
-        bottom: (0/16rem);
+        display: block;
       }
 
       .cs-button-solid {
-        margin-top: (32/16rem);
-      }
-    }
-  }
-
-  /* Desktop - 1024px */
-  @media only screen and (min-width: 64em) {
-    #sbs {
-      .cs-container {
-        flex-flow: row;
-        justify-content: space-between;
-        gap: (52/16rem);
-      }
-
-      .cs-left {
-        font-size: ~"min(1.2vw, 1em)";
-        flex: none;
-      }
-
-      .cs-right {
+        font-size: (16/16rem);
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
         margin: 0;
-      }
-    }
-  }
+        color: #fff;
+        min-width: (150/16rem);
+        padding: 0 (24/16rem);
+        background-color: var(--primary);
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
 
-  /* Dark Mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #sbs {
-        .cs-left {
-          &:before,
-          &:after {
-            background: var(--accent);
+        &:before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 0%;
+          background: #000;
+          opacity: 1;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          border-radius: (4/16rem);
+          transition: width 0.3s;
+        }
+
+        &:hover {
+          &:before {
+            width: 100%;
           }
         }
+      }
 
-        .cs-picture2 {
-          background-color: var(--dark);
-          /* 6px - 12px */
-          border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
-        }
+      .cs-picture {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: (560/16rem);
+        z-index: 1;
 
-        .cs-topper {
-          color: var(--primaryLight);
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
         }
+      }
 
-        .cs-title,
-        .cs-text,
-        .cs-h3,
-        .cs-flex-p,
-        .cs-name {
-          color: var(--bodyTextColorWhite);
-        }
+      .cs-floater {
+        width: 24%;
+        max-width: (295/16rem);
+        height: auto;
+        display: none;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
 
-        .cs-flex-group {
-          background-color: var(--accent);
-        }
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48rem) {
+    #sbs-2171 {
+      /* 90px - 150px */
+      /* returned section padding to the section container, this Stitch has 1.5X padding top and bottom than the normal Stitch */
+      padding: clamp(5.625rem, 9vw, 9.375rem) (16/16rem);
 
-        .cs-job {
-          color: var(--bodyTextColorWhite);
-          opacity: 0.8;
-        }
+      .cs-container {
+        flex-direction: row;
+        justify-content: flex-end;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+        position: relative;
+        z-index: 1;
+      }
 
-        .cs-quote-icon {
-          opacity: 0.2;
+      .cs-content {
+        width: 48%;
+        max-width: (563/16rem);
+        /* 32px - 90px */
+        padding: clamp(2rem, 5vw, 5.625rem) 0;
+      }
+
+      .cs-picture {
+        width: 50vw;
+        height: auto;
+        margin-right: (40/16rem);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 50%;
+      }
+
+      .cs-floater {
+        display: block;
+      }
+    }
+  }
+
+  /*-- -------------------------- -->
+<---       Meet The Team        -->
+<--- -------------------------- -*/
+
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0rem) {
+    #meet-us-1021 {
+      padding: var(--sectionPadding);
+      background-color: #1a1a1a;
+
+      .cs-container {
+        width: 100%;
+        max-width: (1280/16rem);
+        margin: auto;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+      }
+
+      .cs-container {
+        width: 100%;
+        max-width: (1280/16rem);
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+      }
+
+      .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+      }
+
+      .cs-graphic {
+        width: 100%;
+        max-width: (456/17rem);
+        margin: 0 0 (16/16rem) 0;
+      }
+      .cs-title,
+      .cs-text {
+        color: var(--bodyTextColorWhite);
+      }
+
+      .cs-text {
+        opacity: 0.8;
+      }
+
+      .cs-card-group {
+        width: 50%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        /* 16px - 20px */
+        gap: clamp(1rem, 2vw, 1.25rem);
+      }
+
+      .cs-item {
+        list-style: none;
+        width: 100%;
+        max-width: (413/16rem);
+        position: relative;
+        z-index: 1;
+
+        &:hover {
+          .cs-picture {
+            background-color: #000;
+            img {
+              transform: scale(1.1);
+              opacity: 0.6;
+            }
+          }
         }
+      }
+
+      .cs-info {
+        width: 85.5%;
+        /* 16px - 24px */
+        padding: clamp(1rem, 2vw, 1.5rem);
+        margin: (-60/16rem) auto 0;
+        box-sizing: border-box;
+        background-color: #1a1a1a;
+        border-top: 4px solid var(--primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 10;
+      }
+
+      .cs-name {
+        /* 16px - 25px */
+        font-size: clamp(1rem, 2vw, 1.5625rem);
+        font-weight: 700;
+        line-height: 1.2em;
+        /* 4px - 8px */
+        margin: 0 0 clamp(0.25rem, 1vw, 0.5rem);
+        color: var(--bodyTextColorWhite);
+        display: block;
+        transition: color 0.3s;
+      }
+
+      .cs-job {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        color: var(--bodyTextColorWhite);
+        opacity: 0.8;
+        display: block;
+      }
+
+      .cs-picture {
+        width: 100%;
+        /* 246px - 500px */
+        height: clamp(15.375rem, 40vw, 32.25rem);
+        overflow: hidden;
+        display: block;
+        position: relative;
+        transition: background-color 0.3s;
+        z-index: -1;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          /* makes it behave like a background imahe */
+          object-fit: cover;
+          /* makes the image position itself at the top of the parent */
+          object-position: top;
+          transition:
+            transform 0.6s,
+            opacity 0.3s;
+        }
+      }
+    }
+  }
+
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48rem) {
+    #meet-us-1021 {
+      .cs-card-group {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        width: 100%;
+      }
+
+      .cs-item {
+        grid-column: span 4;
       }
     }
   }
