@@ -3,15 +3,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import {getOptimizedImage} from "../js/utils"
-import landingImage from "../assets/images/ballet-gray.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
-const optimizedImage = await getOptimizedImage(landingImage)
+import { getOptimizedImage } from "../js/utils";
+import landingImage from "../assets/images/ballet-gray.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage);
 ---
 
 <BaseLayout
   title="Expert Dance Choreography"
   description="Discover innovative choreography and expert dance instruction with Synergy Dance. Elevating performances through dynamic, tailored routines for all styles and levels. Book your consultation today!"
-  preloadedImage = {optimizedImage}
+  preloadedImage={optimizedImage}
 >
   <!-- ============================================ -->
   <!--                    Hero                      -->
@@ -21,9 +21,15 @@ const optimizedImage = await getOptimizedImage(landingImage)
     <div class="cs-container">
       <div class="cs-flex-group">
         <span class="cs-topper">Synergy Dance</span>
-        <h1 class="cs-title">Transforming Movement into Art with Precision & Passion</h1>
+        <h1 class="cs-title">
+          Transforming Movement into Art with Precision & Passion
+        </h1>
         <p class="cs-text">
-          Synergy Dance LLC specializes in creating dynamic, high-energy choreography for dance teams, studios, and individuals. Whether you're performing at high school competitions, college showcases, or professional events, we tailor each routine to elevate your team's performance.
+          Synergy Dance LLC specializes in creating dynamic, high-energy
+          choreography for dance teams, studios, and individuals. Whether you're
+          performing at high school competitions, college showcases, or
+          professional events, we tailor each routine to elevate your team's
+          performance.
         </p>
         <a href="/about" class="cs-button-solid">Explore More</a>
         <a href="/contact" class="cs-button-transparent">
@@ -47,7 +53,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
         media="(max-width: 600px)"
         srcset="/assets/images/ballet-gray-m.webp"
       />
-      <source media="(min-width: 601px)" srcset="/assets/images/ballet-gray.jpg" />
+      <source
+        media="(min-width: 601px)"
+        srcset="/assets/images/ballet-gray.jpg"
+      />
       <img
         aria-hidden="true"
         decoding="async"
@@ -171,7 +180,13 @@ const optimizedImage = await getOptimizedImage(landingImage)
         <span class="cs-topper">About Us</span>
         <h2 class="cs-title">About Synergy Dance</h2>
         <p class="cs-text">
-          At Synergy Dance, we strive to bring the most cutting-edge, innovative choreography to dancers across the country.  We work with dance teams, studios and individuals. As our name suggests, our goal is to collaborate with dancers of all varieties to produce the perfect storm between visionary choreography and superior dancing. Our mission is to excite and challenge dancers while helping them reach their goals, and in turn, do our part to enhance the world of dance.
+          At Synergy Dance, we strive to bring the most cutting-edge, innovative
+          choreography to dancers across the country. We work with dance teams,
+          studios and individuals. As our name suggests, our goal is to
+          collaborate with dancers of all varieties to produce the perfect storm
+          between visionary choreography and superior dancing. Our mission is to
+          excite and challenge dancers while helping them reach their goals, and
+          in turn, do our part to enhance the world of dance.
         </p>
         <!-- <p class="cs-text">
           In consequat tincidunt turpis sit amet imperdiet. Praesent Class
@@ -251,9 +266,16 @@ const optimizedImage = await getOptimizedImage(landingImage)
       <!-- Right Content Section-->
       <div class="cs-right">
         <!-- <span class="cs-topper">SEO Ranking</span> -->
-        <h2 class="cs-title">Take your routines to the next level with our choreography</h2>
+        <h2 class="cs-title">
+          Take your routines to the next level with our choreography
+        </h2>
         <p class="cs-text">
-          At Synergy Dance LLC, we believe that true synergy happens when artistry and technique come together seamlessly. We work with high school dance teams, college dance teams, professional dancers, and studios to craft routines that captivate audiences and push boundaries. Our choreographers bring years of experience in various styles, ensuring each performance is unique and memorable.
+          At Synergy Dance LLC, we believe that true synergy happens when
+          artistry and technique come together seamlessly. We work with high
+          school dance teams, college dance teams, professional dancers, and
+          studios to craft routines that captivate audiences and push
+          boundaries. Our choreographers bring years of experience in various
+          styles, ensuring each performance is unique and memorable.
         </p>
         <!-- <p class="cs-text">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non tenetur,
